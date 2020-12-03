@@ -1,0 +1,437 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  color: white;
+  text-decoration: transparent;
+  transition-duration: 2s;
+}
+
+a:hover{
+  transition-duration: 2s;
+  color: crimson !important;
+
+}
+
+body {
+  background: black url(imgs/soft_kill.png);
+}
+
+#logo img {
+  width: 250px;
+  height: 100px;
+  float: left;
+  background: transparent;
+}
+
+.logotipo {
+  width: 250px;
+  height: 100px;
+  float: left;
+}
+
+#header {
+  position: sticky;
+  top: 10;
+  overflow: hidden;
+  margin-top: 90%;
+  margin: 0% auto;
+  clear: both;
+  width: 100%;
+  height: 100px;
+  background: black url(imgs/soft_kill.png);
+}
+
+#container {
+  margin: 0px auto;
+  width: 90%;
+}
+
+#menu {
+  clear: both;
+  background: black url(imgs/diamond-zag.png);
+  color: white;
+  text-align: center;
+  height: 80px;
+  border-bottom: 4px solid red;
+  margin: 0px auto;
+  width: 100%;
+}
+
+#menu ul {
+  list-style: none;
+  text-decoration: none;
+  margin: 0px auto;
+  margin-left: 25px;
+}
+
+#menu ul li {
+  line-height: 80px;
+  width: 130px;
+  float: left;
+  border-right: 1px solid #363636;
+}
+
+#menu a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-decoration: none;
+  padding-left: 12px;
+  padding-right: 12px;
+  transition: all 300ms;
+}
+
+#menu a:first-child {
+  border-left: 1px solid #363636;
+}
+
+#menu a:hover {
+  transition-duration: 2s;
+  background-color: rgba(8, 8, 8, 0.356);
+}
+
+#content {
+  margin: 0px auto;
+  width: 91.7%;
+  overflow: hidden;
+  background: black url(imgs/soft_kill.png);
+}
+
+#lateral {
+  width: 22%;
+  min-height: 600px;
+  float: left;
+  background: black url(imgs/diamond-zag.png);
+  margin: 0px auto;
+}
+
+#lateral .block_aside {
+  display: block;
+  width: 90%;
+  margin: 5px auto;
+  padding: 10px;
+}
+
+#lateral h3 {
+  display: block;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  border-bottom: 2px solid red;
+}
+
+#lateral ul {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#lateral ul li {
+  list-style: square;
+  margin-left: 20px;
+}
+
+#lateral a {
+  color: white;
+}
+
+#footer {
+  margin: 0px auto;
+  width: 100%;
+  clear: both;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  background: black url(imgs/diamond-zag.png);
+  border-top: 4px solid red;
+}
+
+.product {
+  width: 20%;
+  margin: 10px;
+  height: 250px;
+  float: left;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align: center;
+  border-top: solid 2px springgreen !important;
+  border: solid 2px red;
+}
+
+.product h3 {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product img {
+  margin-top: 10px;
+  height: 110px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: orange;
+  border-radius: 5px;
+  transition-duration: 2s;
+  color: black;
+  padding: 10px;
+}
+
+.btn:hover {
+  transition-duration: 2s;
+  background-color: teal;
+}
+
+.btn:focus {
+  background-color: teal;
+}
+
+.img-carrito {
+  display: block;
+  margin: 10px auto;
+  height: 60px;
+}
+
+.product p {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.contenedor-info{
+  margin-left: 20px;
+  margin: 0px auto;
+  width: 64%;
+  float: left;
+}
+
+.detail-product {
+  margin-left: 20px;
+  margin-top: 30px;
+  color: white;
+  text-align: left;
+}
+
+.zoom {
+  transition-duration: 2s;
+  margin: 0 auto;
+  height: 212px;
+  width: 246px;
+  margin-bottom: 10px;
+  border-radius: 5%;
+}
+
+.zoom:hover {
+  transition-duration: 2s;
+  transform: scale(1.5);
+  border: 2px solid crimson;
+  border-radius: 10%;
+}
+
+.info-foto{
+  margin: 0px auto;
+  width: 250px;
+  float: left;
+  margin-right: 200px;
+}
+
+.info-texto{
+  margin: 0px auto;
+  width: 250px;
+  float: left;
+}
+
+.tam-grande{
+  font-size: 30px !important;
+}
+
+.detail-product .data {
+  width: 50%;
+  float: right;
+}
+
+.detail-product .button {
+  width: 200px;
+  text-align: center;
+}
+
+.detail-product .description {
+  margin-bottom: 20px;
+}
+
+.detail-product .price {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #444;
+}
+
+.total-carrito{
+  float: right;
+  width: 295px;
+}
+.button-pedido{
+  display: block;
+  float: right;
+  width: 100px;
+}
+
+.button-delete{
+  display: block;
+  float: left;
+  width: 100px;
+}
+
+.button-carrito{
+  width: 70px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.total-carrito h3{
+  display: block;
+  float: left;
+  margin-top: 5px;
+}
+
+.delete-carrito{
+  float: left;
+  width: 295px;
+}
+
+.button-red {
+  background: red;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.button-green{
+  background: green;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.buttonmm{
+  background-color: darkgoldenrod;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.updown-unidades .button{
+  width: 20px;
+  display: block;
+  float: left;
+  padding: 2px;
+  margin: 7px;
+}
+
+.updown-unidades{
+  width: 80px;
+  margin: 0px auto;
+}
+
+.text {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  text-shadow: aqua 0 0 10px;
+  transition-duration: 2s;
+}
+
+.text:hover {
+  transition-duration: 2s;
+  color: crimson;
+  text-shadow: darkgoldenrod 0 0 10px;
+}
+
+.text-sinanimacion{
+  font-size: 15px;
+  color: white;
+}
+
+.tabla-carrito{
+  margin: 0px auto;
+  width: 70%;
+  border: solid 1px grey;
+  background: darkgoldenrod url(imgs/escheresque_ste.png);
+}
+
+.tabla-carrito th, td {
+  border: solid 1px grey;
+  color: white !important;
+  text-align: center;
+}
+
+.acciones{
+  margin: 0px auto;
+  width: 64%;
+  margin-left: 30%;
+}
+
+.gestion-cat{
+  padding-bottom: 30px;
+  margin: 0px auto;
+  width: 69%;
+  margin-left: 26%;
+  background: black url(imgs/escheresque_ste.png);
+}
+
+.gestion-cat table, th, td{
+  width: 90%;
+  margin-left: 5%;
+  padding: 20px;
+}
+
+.gestion-cat-button{
+  margin-left: 5%;
+}
+
+.div-centro{
+  text-align: center;
+  margin: 0px 540px auto;
+  width: 250px;
+  padding-top: 20px;
+  padding: 20px;
+}
+
+.espacio-texto{
+  padding: 4px;
+  border-radius: 20px;
+  margin:2%;
+  border: solid red 1px;
+  background: transparent;
+  transition-duration: 2s;
+}
+
+.espacio-texto:hover{
+  background-color: white;
+  opacity: 0.9;
+  border: solid black 1px;
+  transition-duration: 2s;
+  border-radius: 20px;
+}
+
+.espacio-texto:focus{
+  background-color: white;
+  opacity: 0.9;
+  border: solid black 1px;
+  transition: 2s;
+  border-radius: 20px;
+}
+
+#central{
+  padding: 5px;
+  width: 75%;
+  float: right;
+}

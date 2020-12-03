@@ -1,0 +1,315 @@
+<?php
+class Producto
+{
+
+    private $id;
+    private $nombre;
+    private $categoria_id;
+    private $descripcion;
+    private $precio;
+    private $stock;
+    private $oferta;
+    private $fecha;
+    private $imagen;
+    private $destacados;
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = Database::connect();
+    }
+
+    /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nombre
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set the value of nombre
+     *
+     * @return  self
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $this->db->real_escape_string($nombre);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of categoria_id
+     */
+    public function getCategoria()
+    {
+        return $this->categoria_id;
+    }
+
+    /**
+     * Set the value of categoria_id
+     *
+     * @return  self
+     */
+    public function setCategoria($categoria_id)
+    {
+        $this->categoria_id = $categoria_id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of descripcion
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * Set the value of descripcion
+     *
+     * @return  self
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $this->db->real_escape_string($descripcion);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of precio
+     */
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    /**
+     * Set the value of precio
+     *
+     * @return  self
+     */
+    public function setPrecio($precio)
+    {
+        $this->precio = $precio;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of stock
+     */
+    public function getStock()
+    {
+        return $this->stock;
+    }
+
+    /**
+     * Set the value of stock
+     *
+     * @return  self
+     */
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of oferta
+     */
+    public function getOferta()
+    {
+        return $this->oferta;
+    }
+
+    /**
+     * Set the value of oferta
+     *
+     * @return  self
+     */
+    public function setOferta($oferta)
+    {
+        $this->oferta = $this->db->real_escape_string($oferta);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fecha
+     */
+    public function getFecha()
+    {
+        return $this->fecha;
+    }
+
+    /**
+     * Set the value of fecha
+     *
+     * @return  self
+     */
+    public function setFecha($fecha)
+    {
+        $this->fecha = $fecha;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of imagen
+     */
+    public function getImagen()
+    {
+        return $this->imagen;
+    }
+
+    /**
+     * Set the value of imagen
+     *
+     * @return  self
+     */
+    public function setImagen($imagen)
+    {
+        $this->imagen = $imagen;
+
+        return $this;
+    }
+
+        /**
+     * Get the value of destacados
+     */ 
+    public function getDestacados()
+    {
+        return $this->destacados;
+    }
+
+    /**
+     * Set the value of destacados
+     *
+     * @return  self
+     */ 
+    public function setDestacados($destacados)
+    {
+        $this->destacados = $destacados;
+
+        return $this;
+    }
+
+    public function getAll()
+    {
+        $productos = $this->db->query("SELECT * FROM productos ORDER BY id DESC LIMIT 8");
+       
+        return $productos;
+    }
+
+    public function getAllbyCategory()
+    {
+        $sql = "SELECT p.*, c.nombre AS 'catNombre' FROM productos  p "
+            . "INNER JOIN categorias c ON c.id = p.categoria_id "
+            . "WHERE p.categoria_id = ($this->categoria_id) "
+            . " ORDER BY id DESC";
+
+        $productos = $this->db->query($sql);
+        return $productos;
+    }
+
+    public function getvalor()
+    {
+        $destacado = $this->destacados;
+        $productos = $this->db->query("SELECT * FROM productos WHERE destacado = '$destacado' ORDER BY stock DESC LIMIT 8");
+        return $productos;
+    }
+
+    public function getOne()
+    {
+
+        $producto = $this->db->query("SELECT * FROM productos WHERE id = ($this->id)");
+        return $producto->fetch_object();
+    }
+
+    public function save()
+    {
+        $nombre = $this->getNombre();
+        $descripcion = $this->getDescripcion();
+        $precio = $this->getPrecio();
+        $stock = $this->getStock();
+        $categoria = $this->getCategoria();
+        $imagen = $this->getImagen();
+        $destacados = $this->getDestacados();
+
+        $datenow = new DateTime();
+        $datenow->setTimezone(new DateTimeZone('America/Costa_Rica'));
+        $strdate = $datenow->format('Y-m-d H:i:s');
+
+        $sql = "INSERT INTO productos VALUES(NULL, '$categoria', '$nombre', '$descripcion', '$precio', '$stock', null, '$strdate', '$imagen', '$destacados')";
+        $guardar = $this->db->query($sql);
+
+        $result = false;
+        if ($guardar) {
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function update()
+    {
+        $nombre = $this->getNombre();
+        $descripcion = $this->getDescripcion();
+        $precio = $this->getPrecio();
+        $stock = $this->getStock();
+        $categoria = $this->getCategoria();
+        $imagen = $this->getImagen();
+
+        $sql = "UPDATE productos SET nombre='$nombre', descripcion='$descripcion', precio='$precio', stock='$stock', categoria_id='$categoria'";
+
+        if ($this->getImagen() != null) {
+            $sql .= ",imagen='$imagen'";
+        }
+
+        $sql .= "WHERE id=($this->id);";
+
+        $guardar = $this->db->query($sql);
+
+        $result = false;
+        if ($guardar) {
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function delete()
+    {
+        $sql = "DELETE FROM productos WHERE id=($this->id)";
+        $delete = $this->db->query($sql);
+
+        $result = false;
+        if ($delete) {
+            $result = true;
+        }
+        return $result;
+    }
+}
