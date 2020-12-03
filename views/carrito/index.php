@@ -15,18 +15,18 @@
             <tr>
                 <td>
                     <?php if ($producto->imagen != null) : ?>
-                        <img src="<?= dir ?>uploads/images/<?= $producto->imagen ?>" class="img-carrito">
+                        <img src="<?= dir ?>cargas/<?= $producto->imagen ?>" class="zoom img-carrito">
                     <?php else : ?>
                         <img src="<?= dir ?>assets/img/camiseta2.png" class="img-carrito">
                     <?php endif; ?>
                 </td>
                 <td>
-                    <a href="<?= dir ?>producto/ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
+                    <a href="<?= dir ?>producto/ver&id=<?= $producto->id ?>" class="text-sinanimacion"><?= $producto->nombre ?></a>
                 </td>
                 <td>
-                    $<?= $producto->precio ?>
+                    <p class="text-sinanimacion">$<?= $producto->precio ?></p> 
                 </td>
-                <td>
+                <td class="text-sinanimacion">
                     <?= $elemento['unidades'] ?>
                     <div class="updown-unidades">
                         <a href="<?= dir ?>carrito/up&index=<?= $indice ?>" class="buttonmm">+</a>
@@ -48,7 +48,7 @@
         <div class="total-carrito">
             <?php $stats = Utils::statsCarrito(); ?>
             <h3>Precio total: $<?= $stats['total'] ?></h3>
-            <a href="pedido/hacer" class="button-green">Hacer pedido</a>
+            <a href="<?=dir?>pedido/hacer" class="button-green">Hacer pedido</a>
         </div>
     </div>
     <?php else : ?>

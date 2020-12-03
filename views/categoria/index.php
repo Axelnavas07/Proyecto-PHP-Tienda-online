@@ -4,7 +4,7 @@
 <div class="gestion-cat">
 
 
-    <table>
+    <table class="tabla-carrito">
         <br>
         <tr>
             <th>ID</th>

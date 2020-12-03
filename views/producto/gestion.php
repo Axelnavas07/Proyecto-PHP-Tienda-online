@@ -19,7 +19,7 @@
 
 
     <?php Utils::deleteSession('producto'); ?>
-    <table class="w3-light-grey tam">
+    <table class="tabla-carrito">
         <thead>
             <tr>
                 <th class="text-sinanimacion">ID</th>
@@ -43,12 +43,12 @@
                 <td class="text-sinanimacion">
                     <?= $prod->stock; ?>
                 </td>
-                <td class="text-sinanimacion">
+                <td class="text-sinanimacion gestion-tabla">
                     <a href="<?= dir ?>producto/editar&id=<?= $prod->id ?>" class="btn">Editar</a><br>
                     <br><a href="<?= dir ?>producto/eliminar&id=<?= $prod->id ?>" class="btn">Eliminar</a>
                 </td>
             </tr>
         <?php endwhile; ?>
-    </table>
+    </table><br>
     <a href="<?= dir ?>producto/crear" class="btn gestion-cat-button">Crear producto</a>
 </div>
