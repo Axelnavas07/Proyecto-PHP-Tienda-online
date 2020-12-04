@@ -7,7 +7,7 @@
     
     <form action="<?= dir ?>pedido/add" method="POST">
 
-        <h3>Dirección para el envío</h3>
+        <h3 class="text-sinanimacion">Dirección para el envío</h3>
         </br>
         <label class="text-sinanimacion" for="provincia">Provincia</label><br>
         <input type="text" name="provincia" required class="espacio-texto" placeholder="Provincia"><br>
@@ -16,6 +16,7 @@
         <input type="text" name="localidad" required class="espacio-texto" placeholder="Cuidad"><br>
 
         <label class="text-sinanimacion" for="direccion">Dirección</label><br>
+        
         <input type="text" name="direccion" required class="espacio-texto" placeholder="Direccion"><br>
 
         <input type="submit" value="Confirmar" class="btn">

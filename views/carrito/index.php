@@ -24,7 +24,7 @@
                     <a href="<?= dir ?>producto/ver&id=<?= $producto->id ?>" class="text-sinanimacion"><?= $producto->nombre ?></a>
                 </td>
                 <td>
-                    <p class="text-sinanimacion">$<?= $producto->precio ?></p> 
+                    <p class="text-sinanimacion">$<?= $producto->precio ?></p>
                 </td>
                 <td class="text-sinanimacion">
                     <?= $elemento['unidades'] ?>
@@ -40,18 +40,14 @@
         <?php endforeach; ?>
     </table>
     </br>
-    <div class="acciones">
-        <div class="delete-carrito">
-            <a href="<?= dir ?>carrito/delete_all" class="button-red">Vaciar carrito</a>
-        </div>
-
-        <div class="total-carrito">
-            <?php $stats = Utils::statsCarrito(); ?>
-            <h3>Precio total: $<?= $stats['total'] ?></h3>
-            <a href="<?=dir?>pedido/hacer" class="button-green">Hacer pedido</a>
-        </div>
+    <div class="total-carrito">
+        <?php $stats = Utils::statsCarrito(); ?>
+        <h3 class="text-sinanimacion">Precio total: $<?= $stats['total'] ?></h3>
     </div>
-    <?php else : ?>
-        <p class="text">El carrito está vacío, puede añadir productos</p>
-    <?php endif; ?>
-    
+    <div class="acciones">
+        <a href="<?= dir ?>carrito/delete_all" class="button-red">Vaciar carrito</a>
+        <a href="<?= dir ?>pedido/hacer" class="button-green">Hacer pedido</a>
+    </div>
+<?php else : ?>
+    <p class="text">El carrito está vacío, puede añadir productos</p>
+<?php endif; ?>

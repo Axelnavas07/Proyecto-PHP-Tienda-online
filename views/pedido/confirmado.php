@@ -1,15 +1,15 @@
 <?php if (isset($_SESSION['pedido']) && $_SESSION['pedido'] == 'complete') : ?>
-    <h1>Tu pedido se ha confirmado</h1>
-    <p>Tu pedido ha sido guardado con exito, una vez finalizada la tranferencia bancaria, el pedido
+    <h1 class="text">Tu pedido se ha confirmado</h1>
+    <p class="text-sinanimacion">Tu pedido ha sido guardado con exito, una vez finalizada la tranferencia bancaria, el pedido
         será procesado y enviado </p>
     <br>
     <?php if (isset($pedido)) : ?>
-        <h3>Datos del pedido:</h3>
+        <h3 class="text-sinanimacion">Datos del pedido:
 
         Número del pedido: <?= $pedido->id ?> <br>
         Total a pagar: $<?= $pedido->coste ?> <br>
-        Productos: <br>
-        <table>
+        Productos: <br></h3>
+        <table class="tabla-carrito">
             <tr>
                 <th>Imagen</th>
                 <th>Nombre</th>
@@ -20,13 +20,13 @@
                 <tr>
                     <td>
                         <?php if ($producto->imagen != null) : ?>
-                            <img src="<?= base_url ?>uploads/images/<?= $producto->imagen ?>" class="img-carrito">
+                            <img src="<?= dir ?>cargas/<?= $producto->imagen ?>" class="img-carrito">
                         <?php else : ?>
-                            <img src="<?= base_url ?>assets/img/camiseta2.png" class="img-carrito">
+                            <img src="<?= dir ?>assets/img/camiseta2.png" class="img-carrito">
                         <?php endif; ?>
                     </td>
                     <td>
-                        <a href="<?= base_url ?>producto/ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
+                        <a href="<?= dir ?>producto/ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
                     </td>
                     <td>
                         $<?= $producto->precio ?>

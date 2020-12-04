@@ -3,7 +3,7 @@
 <?php if (isset($pedido)) : ?>
     <?php if (isset($_SESSION['admin'])) : ?>
         <h3>Cambiar estado del pedido:</h3>
-        <form action="<?= base_url ?>pedido/estado" method="POST">
+        <form action="<?= dir ?>pedido/estado" method="POST">
             <input type="hidden" value="<?= $pedido->id ?>" name="pedido_id">
             <select name="estado">
                 <option value="confirm" <?= $pedido->estado == "confirm" ? 'selected' : ''; ?>>Pendiente</option>
@@ -36,13 +36,13 @@
             <tr>
                 <td>
                     <?php if ($producto->imagen != null) : ?>
-                        <img src="<?= base_url ?>uploads/images/<?= $producto->imagen ?>" class="img-carrito">
+                        <img src="<?= dir ?>uploads/images/<?= $producto->imagen ?>" class="img-carrito">
                     <?php else : ?>
-                        <img src="<?= base_url ?>assets/img/camiseta2.png" class="img-carrito">
+                        <img src="<?= dir ?>assets/img/camiseta2.png" class="img-carrito">
                     <?php endif; ?>
                 </td>
                 <td>
-                    <a href="<?= base_url ?>producto/ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
+                    <a href="<?= dir ?>producto/ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
                 </td>
                 <td>
                     $<?= $producto->precio ?>

@@ -375,7 +375,7 @@ body {
 }
 
 .text-sinanimacion{
-  font-size: 20px;
+  font-size: 24px;
   color: white;
 }
 
@@ -425,13 +425,14 @@ body {
   padding: 4px;
   border-radius: 20px;
   margin:2%;
+  color: white;
   border: solid red 1px;
   background: transparent;
   transition-duration: 2s;
 }
 
 .espacio-texto:hover{
-  background-color: white;
+  background-color: black;
   opacity: 0.9;
   border: solid black 1px;
   transition-duration: 2s;
@@ -440,6 +441,7 @@ body {
 
 .espacio-texto:focus{
   background-color: white;
+  color: black;
   opacity: 0.9;
   border: solid black 1px;
   transition: 2s;
