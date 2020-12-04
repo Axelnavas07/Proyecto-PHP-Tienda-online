@@ -5,7 +5,7 @@
 
 <!-- PIE DE PAGINA -->
 <footer id="footer">
-    <p class="text">Desarrollado por Axel</p>
+    <a href="<?= dir ?>inicio/despedida"><p class="text">Desarrollado por Axel</p></a>
 
 </footer>
 </div>

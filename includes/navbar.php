@@ -33,7 +33,6 @@
           <a href="<?= dir ?>categoria/ver&id=<?= $cat->id ?>"><?= $cat->nombre ?></a>
         </li>
       <?php endwhile; ?>
-      <input type="text" class="trep" placeholder="Buscar" class="espacio-texto">
     </ul>
   </nav>
 

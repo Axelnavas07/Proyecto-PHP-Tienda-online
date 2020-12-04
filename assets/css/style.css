@@ -57,6 +57,7 @@ body {
   height: 80px;
   border-bottom: 4px solid red;
   border-left: 4px solid gold;
+  border-right: 4px solid aqua;
   margin: 0px auto;
   width: 100%;
 }
@@ -103,11 +104,12 @@ body {
 
 #lateral {
   width: 22%;
-  min-height: 600px;
   float: left;
   background: black url(imgs/diamond-zag.png);
   margin: 0px auto;
   border-left: 4px solid gold;
+  border-right: 4px solid aqua;
+  min-height: 1000px;
 }
 
 #lateral .block_aside {
@@ -125,15 +127,16 @@ body {
   padding-top: 2px;
   padding-bottom: 2px;
   margin-bottom: 15px;
-  font-size: 16px;
+  font-size: 25px;
   font-weight: bold;
   background: transparent;
   border-bottom: 2px solid red;
 }
 
 #lateral ul {
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
+  font-size: 20px;
 }
 
 #lateral ul li {
@@ -156,6 +159,7 @@ body {
   background: black url(imgs/diamond-zag.png);
   border-top: 4px solid red;
   border-left: 4px solid gold;
+  border-right: 4px solid aqua;
 }
 
 .product {
@@ -386,7 +390,7 @@ body {
 .gestion-cat{
   padding: 10px;
   margin: 0px auto;
-  width: 50%;
+  width: 100%;
   padding-bottom: 30px;
   margin: 0px auto;
 }
@@ -432,4 +436,123 @@ body {
   padding: 5px;
   width: 75%;
   float: right;
+}
+
+/*Div anuncios*/
+.anuncios{
+  float: left;
+  margin: 0px auto;
+  width: 100%;
+  margin-top: 2%;
+}
+
+.containercar {
+  position: relative;
+  margin: 0px auto;
+  width: 60%;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background: url(imgs/escheresque_ste.png);
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+  border-top: 2px solid blue;
+  border-bottom: 2px solid blue;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.imagencam{  
+  width: 100%;
+  margin: 0px auto;
+  height: 46px;
+}
+
+.imagencarusel{
+  height: 273px;
+}
+
+/*Fin div anuncios*/
+/*Video*/
+.video{
+  margin: 0px auto;
+  float: left;
+  width: 66%;
+  border: 2px solid red;
+}
+
+.video video{
+  height: 50%;
 }
